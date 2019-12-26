@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<title>profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), 
+    url(profile.jpg);
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+
+}
+
+#pos01{
+  position: absolute;
+  top: 100px;
+  left: 650px;
+}
+
+#pos02{
+  position: absolute;
+  top: 520px;
+  left: 1150px;
+}
+
+#pos_clock{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#pos_img{
+  position: absolute;
+  top: 100px;
+  left: 1150px;
+}
+
+</style>
+
+<!--icon CDN-->
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+        integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" 
+        crossorigin="anonymous"></script>
+
+<!--clock-->
+<script type="text/javascript">
+  var clockid=new Array()
+  var clockidoutside=new Array()
+  var i_clock=-1
+  var thistime= new Date()
+  var hours=thistime.getHours()
+  var minutes=thistime.getMinutes()
+  var seconds=thistime.getSeconds()
+  if (eval(hours) <10) {hours="0"+hours}
+  if (eval(minutes) < 10) {minutes="0"+minutes}
+  if (seconds < 10) {seconds="0"+seconds}
+  var thistime = hours+":"+minutes+":"+seconds
+    
+  function writeclock() {
+    i_clock++
+    if (document.all || document.getElementById || document.layers) {
+      clockid[i_clock]="clock"+i_clock
+      document.write("<span id='"+clockid[i_clock]+"' style='position:relative'>"+thistime+"</span>")
+    }
+  }
+
+  function clockon() {
+    thistime= new Date()
+    hours=thistime.getHours()
+    minutes=thistime.getMinutes()
+    seconds=thistime.getSeconds()
+    if (eval(hours) <10) {hours="0"+hours}
+    if (eval(minutes) < 10) {minutes="0"+minutes}
+    if (seconds < 10) {seconds="0"+seconds}
+    thistime = hours+":"+minutes+":"+seconds
+      
+    if (document.all) {
+      for (i=0;i<=clockid.length-1;i++) {
+        var thisclock=eval(clockid[i])
+        thisclock.innerHTML=thistime
+      }
+    }
+    
+    if (document.getElementById) {
+      for (i=0;i<=clockid.length-1;i++) {
+        document.getElementById(clockid[i]).innerHTML=thistime
+      }
+    }
+    var timer=setTimeout("clockon()",1000)
+  }
+  window.onload=clockon
+</script>
+
+<body>
+
+<!--content-->
+<div class="bgimg w3-display-container w3-text-black">
+  <div id="pos_clock">
+    <br>
+    <p class="w3-large" id="date">
+      Time: 
+      <script> document.write(new Date().toLocaleDateString()); </script>
+      <script> writeclock() </script>
+    </p>
+  </div>
+  <div id="pos01" class="w3-large">
+    <h1 class="w3-xlarge"><b> Profile</b></h1>
+      <p><i class="fas fa-graduation-cap"></i> NTHUCS/ CGSH gifted class 23th</p>
+      <p><i class="fas fa-envelope"></i> t.a.w.forwork@gmail.com</p>
+      <p><i class="fas fa-tasks"></i> Programmer Rookie / Amateur writer&darter</p>
+      <p><i class="fas fa-check-circle"></i> Dream Chaser</li></p>
+    <h1 class="w3-xlarge"><b> Hobbies</b></h1>
+      <a href="http://shorturl.at/lrAO1"><i class="fas fa-gamepad"></i> Music Games</p>
+      <a href="http://shorturl.at/egCWY"><i class="fas fa-gamepad"></i> Darts</p>
+      <a href="tunajaw_articles.pdf" class="w3-text-blue"><i class="fas fa-download"></i>Click this link to download my book.</a>
+      <br>
+      <a>No virus inside the file.</a>
+  </div>
+  <div id="pos02">
+      <h2 class="w3-xxlarge"><b> C.Y.Wu/吳哲宇</b></h2>
+  </div>
+  <div id="pos_img">
+    <img src="img_profile.jpg" style="width: 240px; height: 400px">
+  </div>
+  <div class="w3-display-bottommiddle w3-container w3-text-indigo">
+    <a href="index.html">Back to main page</a>
+  </div>
+
+</body>
+
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="story.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Story</a>
+    <a href="profile.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Profile</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Albums<i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="http://shorturl.at/lrAO1" class="w3-bar-item w3-button">Music Games</a>
+        <a href="http://shorturl.at/egCWY" class="w3-bar-item w3-button">Darts</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+
+
+</html>
